@@ -164,14 +164,22 @@ async function simbriefButtonHandler(event) {
     event.preventDefault();
     const vamsysData = await chrome.storage.sync.get();
 
-    setPaxNumber(vamsysData.paxNumber);
+    // setPaxNumber(vamsysData.paxNumber);
+    const intervalId = setInterval(() => {
+        const isAircraftTypeSelected = Array.from(document.querySelector('#basetype').classList)
+            .find((record) => record === 'invalid') === undefined;
+        if (isAircraftTypeSelected) {
+            clearInterval(intervalId);
+            setPaxNumber(vamsysData.paxNumber);
+        }
+    }, 1000);
     setAirlineCode(vamsysData.airlineCode);
     setFlightNumber(vamsysData.flightNumber);
     setCallsign(vamsysData.callsign);
     setDepartureICAO(vamsysData.departureICAO);
     setArrivalICAO(vamsysData.arrivalICAO);
     document.querySelector('#options-reset-date').click();
-    setDepartureTime(vamsysData.departureTime);
+    // setDepartureTime(vamsysData.departureTime);
 }
 
 function setAirlineCode(airlineCode) {
