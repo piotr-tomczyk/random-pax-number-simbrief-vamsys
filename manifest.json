@@ -1,6 +1,6 @@
 {
-  "name": "Fresh Chrome Extension",
-  "description": "Generate random pax number",
+  "name": "Random pax number Vamsys",
+  "description": "Generates more accurate random pax number",
   "version": "1.0.0",
   "manifest_version": 3,
   "action": {
