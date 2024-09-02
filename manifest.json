@@ -1,6 +1,6 @@
 {
   "name": "Fresh Chrome Extension",
-  "description": "Fully functional, useful bare minimum Google Chrome extension boilerplate [Manifest V3].",
+  "description": "Generate random pax number",
   "version": "1.0.0",
   "manifest_version": 3,
   "action": {
@@ -16,14 +16,10 @@
   "content_scripts": [
     {
       "run_at" : "document_idle",
-      "js": ["after.js"],
+      "js": ["content.js"],
       "matches": [
-        "https://vamsys.io/*",
-        "https://dispatch.simbrief.com/*"
+        "https://vamsys.io/*"
       ]
     }
-  ],
-  "permissions": [
-    "storage"
   ]
 }
