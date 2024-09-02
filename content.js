@@ -77,7 +77,7 @@ function setPaxNumber(paxNumber) {
 function createAndInsertVamsysButton() {
     const vamsysButton = document.querySelector('.kt-portlet__head-toolbar');
     const myButton = vamsysButton.firstChild.cloneNode(true);
-    myButton.textContent = 'Generate pax number';
+    myButton.textContent = 'Re-generate pax number';
     myButton.id = 'generate-pax-number';
     myButton.addEventListener('click', vamsysButtonHandler);
     myButton.style.marginLeft = '10px';
