@@ -71,6 +71,9 @@ function setPaxNumber(paxNumber) {
         const paxNumberLabelElement = getVamsysLabelElement('Passengers');
         const paxNumberInputElement = paxNumberLabelElement?.parentElement.querySelector('input');
         paxNumberInputElement.value = paxNumber;
+
+        const event = new Event('input', { bubbles: true });
+        paxNumberInputElement.dispatchEvent(event);
     }
 }
 
